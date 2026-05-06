@@ -1,0 +1,90 @@
+.reviews-slider {
+    &__buttons {
+        display: flex;
+        @include spacing(gap, 12px);
+        justify-self: end;
+        align-items: center;
+
+        & .btn {
+            @include spacing(width, 48px);
+        }
+
+        @include Tablet {
+            & .btn {
+                background: transparent;
+                @include spacing(border-width, 2px);
+                border-style: solid;
+                border-color: var(--color1-main);
+            }
+        }
+        @include Mobile {
+
+        }
+    }
+
+    &__slider-wrap {
+        overflow: hidden;
+        height: fit-content;
+
+        & .swiper-slide {
+            display: flex;
+            flex-direction: row;
+            @include spacing(gap, 20px);
+            align-items: flex-end;
+
+            @include Tablet {
+                flex-direction: column;
+            }
+            @include Mobile {
+                align-items: flex-start;
+            }
+
+            & .steps-card {
+                width: vw(830px);
+                min-height: fit-content;
+
+                &__textBlock {
+                    @include Mobile {
+                        display: none;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+
+                @include HD {
+                    width: vwh(628px);
+                }
+                @include Tablet {
+                    width: 100%;
+                }
+                @include Mobile {
+                    width: vwm(322px);
+                }
+            }
+
+            video, .reviews-slider__slider--image {
+                width: vw(830px);
+                height: vw(466px);
+                @include spacing(border-radius, 40px);
+
+                @include HD {
+                    width: vwh(628px);
+                    height: vwh(353px);
+                }
+                @include Tablet {
+                    width: 100%;
+                    height: vwt(380px);
+                    @include spacing(border-radius, 20px);
+                }
+                @include Mobile {
+                    width: vwm(322px);
+                    height: vwm(180px);
+                }
+            }
+        }
+    }
+
+    &__slider {
+        overflow: hidden;
+    }
+}

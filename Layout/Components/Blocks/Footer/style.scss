@@ -1,0 +1,278 @@
+.footer {
+    padding-bottom: vw(40px);
+
+    @include HD {
+        padding-bottom: vwh(40px);
+    }
+    @include Tablet {
+        padding-bottom: vwt(20px);
+    }
+    @include Mobile {
+        padding-bottom: vwm(20px);
+    }
+
+    &__content {
+        position: relative;
+        background: var(--gray-black);
+        display: flex;
+        flex-direction: column;
+        padding: vw(60px) vw(80px) vw(80px) vw(80px);
+        @include spacing(border-radius, 40px);
+        @include spacing(gap, 40px);
+
+        @include HD {
+            padding: vwh(60px) vwh(45px) vwh(80px) vwh(45px);
+        }
+        @include Tablet {
+            @include spacing(border-radius, 20px);
+            padding: vwt(40px) vwt(16px) vwt(60px) vwt(16px);
+        }
+        @include Mobile {
+            padding: vwm(40px) vwm(16px) vwm(60px) vwm(16px);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        @include Tablet {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: vwt(40px);
+        }
+        @include Mobile {
+            gap: vwm(40px);
+        }
+
+        &--logo {
+            margin-right: auto;
+
+            img {
+                @include spacing(width, 160px);
+                @include spacing(height, 37px);
+            }
+
+            @include HD {
+                margin-right: vwh(60px);
+            }
+            @include Tablet {
+                margin: 0;
+            }
+        }
+        &--shares {
+            display: flex;
+            flex-direction: row;
+            @include spacing(gap, 40px);
+
+            @include Mobile {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: vwm(20px);
+            }
+        }
+        &--socials {
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 12px);
+            margin-left: vw(40px);
+            width: vw(400px);
+
+            @include HD {
+                width: vwh(200px);
+                margin-left: 0;
+            }
+            @include Tablet {
+                width: 100%;
+            }
+
+            p {
+                @include t4;
+                color: var(--gray-lighter);
+            }
+        }
+    }
+
+    &__tel,
+    &__email {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 8px);
+        white-space: nowrap;
+
+        @include HD {
+            @include spacing(padding-right, 40px);
+        }
+
+        & .btn {
+            @include h3;
+            color: var(--color1-main);
+
+            & .btn__text {
+                @include spacing(margin-bottom, 3px);
+            }
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    color: var(--gray-darker);
+                }
+            }
+
+            &:active {
+                background: var(--color1-lighter);
+                color: var(--color1-dark);
+            }
+        }
+
+        p {
+            @include t4;
+            color: var(--gray-lighter);
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 8px);
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @include spacing(gap, 40px);
+        justify-content: space-between;
+
+        @include Tablet {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+        @include Mobile {
+
+            & .btn {
+                min-width: 100%;
+            }
+        }
+
+        &--nav {
+            display: flex;
+            flex-direction: row;
+            @include spacing(gap, 20px);
+
+            @include Tablet {
+                display: grid;
+                grid-template-columns: repeat(2, vwt(313px));
+            }
+            @include Mobile {
+                display: flex;
+                flex-direction: column;
+
+
+            }
+        }
+
+        &--link {
+            padding: vw(8px) vw(12px) vw(8px) 0;
+
+            @include HD {
+                padding: vwh(8px) vwh(12px) vwh(8px) 0;
+            }
+            @include Tablet {
+                padding: vwt(8px) vwt(12px) vwt(8px) 0;
+            }
+            @include Mobile {
+                padding: vwm(8px) vwm(12px) vwm(8px) 0;
+            }
+
+            span {
+                @include t2;
+                color: var(--gray-white);
+                font-weight: 700;
+
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        color: var(--color1-light);
+                    }
+                }
+
+                &:active {
+                    color: var(--color1-darker);
+                }
+            }
+        }
+    }
+
+    &__end {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &--ls {
+            display: flex;
+            flex-direction: row;
+            @include spacing(gap, 40px);
+
+            @include Mobile {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: vwm(12px);
+            }
+
+            span, a {
+                @include t3;
+                color: var(--gray-medium);
+            }
+
+            a {
+                text-decoration-line: underline;
+            }
+        }
+
+        &--rs {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            @include spacing(gap, 40px);
+
+            @include Tablet {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            a span {
+                @include t4-lh;
+                color: var(--gray-white);
+            }
+        }
+    }
+    
+    &__up {
+        position: absolute;
+        top: vw(60px);
+        right: vw(80px);
+        background: var(--color1-main);
+        @include spacing(width, 48px);
+        @include spacing(height, 48px);
+        @include spacing(padding, 12px);
+        border-radius: 50%;
+
+        @include HD {
+            top: vwh(60px);
+            right: vwh(45px);
+        }
+        @include Tablet {
+            top: vwt(40px);
+            right: vwt(16px);
+        }
+        @include Mobile {
+            top: vwm(40px);
+            right: vwm(16px);
+        }
+
+        svg {
+            color: var(--gray-white);
+        }
+    }
+}

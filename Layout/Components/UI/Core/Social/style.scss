@@ -1,0 +1,35 @@
+.social__link {
+    @include spacing(padding, 12px);
+    @include spacing(border-radius, 100px);
+    @include spacing(min-height, 48px);
+    @include spacing(min-width, 48px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-white);
+    transition: background 0.3s, fill 0.3s;
+    will-change: background, fill;
+
+    svg {
+        @include spacing(width, 24px);
+        @include spacing(height, 24px);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            background: var(--color1-lighter);
+
+            svg path {
+                fill: var(--color1-darker);
+            }
+        }
+    }
+
+    &:active {
+        background: var(--color1-light);
+
+        svg path {
+            fill: var(--gray-darker);
+        }
+    }
+}

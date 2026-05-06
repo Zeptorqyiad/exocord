@@ -1,0 +1,45 @@
+ .faq {
+    padding: vw(80px) 0;
+
+     @include HD {
+         padding: vwh(60px) 0;
+     }
+     @include Tablet {
+         padding: vwt(40px) 0;
+     }
+     @include Mobile {
+         padding: vwm(40px) 0;
+     }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: vw(60px);
+
+        @include HD {
+            gap: vwh(40px);
+        }
+        @include Tablet {
+            gap: vwt(24px);
+        }
+        @include Mobile {
+            gap: vwm(24px);
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include spacing(gap, 20px);
+
+        @include Tablet {
+            display: flex;
+            flex-direction: column;
+        }
+
+        & .accordion {
+            user-select: none;
+            height: fit-content;
+        }
+    }
+}

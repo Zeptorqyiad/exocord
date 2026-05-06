@@ -1,0 +1,78 @@
+.db-card {
+    position: relative;
+    @include spacing(min-width, 286px);
+    @include spacing(min-height, 90px);
+
+    @include Mobile {
+        min-width: fit-content;
+        max-width: vwm(286px);
+    }
+
+    h3, span {
+        position: absolute;
+        user-select: none;
+    }
+
+    h3 {
+        @include h3;
+        @include spacing(top, 20px);
+        @include spacing(left, 20px);
+    }
+
+    & .db-card__text-top {
+        @include h6;
+        @include spacing(top, 18px);
+        @include spacing(left, 62px);
+    }
+
+
+    & .db-card__text-bottom {
+        @include t3;
+        color: var(--gray-darker);
+        @include spacing(top, 30px);
+        @include spacing(left, 62px);
+    }
+
+    & .db-card__text-right {
+        @include t4;
+        color: var(--gray-dark);
+        @include spacing(bottom, 25px);
+        @include spacing(right, 20px);
+        @include spacing(max-width, 144px);
+
+        @include Mobile {
+            max-width: vwm(100px);
+            right: vwm(45px);
+            bottom: vwm(18px);
+        }
+    }
+
+    svg {
+        @include spacing(width, 294px);
+        @include spacing(height, 94px);
+    }
+
+    /*----------STYLE-----------*/
+
+    &-style_blue {
+        &.db-card__number,
+        &.db-card__text-top {
+            color: var(--color1-dark);
+        }
+    }
+
+    &-style_orange {
+        &.db-card__number,
+        &.db-card__text-top {
+            color: var(--color2-main);
+        }
+    }
+}
+
+.db-card:first-child .db-card__text-top {
+    @include spacing(top, 24px);
+
+    @include Tablet {
+        @include spacing(top, 22px);
+    }
+}

@@ -1,0 +1,106 @@
+.policy {
+    padding-bottom: vw(80px);
+    display: flex;
+    flex-direction: column;
+
+    @include HD {
+        padding-bottom: vwh(80px);
+    }
+    @include Tablet {
+        padding: vwt(106px) 0 vwt(40px);
+    }
+    @include Mobile {
+        padding: vwm(106px) 0 vwm(40px);
+    }
+
+    &__title {
+        margin-bottom: vw(80px);
+        padding: vw(20px) 0 vw(21px);
+        color: var(--gray-black);
+        border-bottom: solid var(--gray-light);
+        text-align: center;
+        @include h3;
+        @include border-w(1px);
+
+        @include HD {
+            margin-bottom: vwh(80px);
+            padding: vwh(20px) 0 vwh(21px);
+        }
+        @include Tablet {
+            margin-bottom: vwt(20px);
+            padding-bottom: vwt(20px);
+            border-color: var(--gray-lighter);
+            text-align: center;
+        }
+        @include Mobile {
+            margin-bottom: vwm(20px);
+            padding-bottom: vwm(20px);
+        }
+    }
+
+    h3, h4 {
+        font-weight: 400;
+        text-align: center;
+    }
+
+    &__content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: vw(700px);
+
+        @include HD {
+            width: vwh(700px);
+        }
+        @include Tablet {
+            width: vwt(480px);
+        }
+        @include Tablet {
+            width: 100%
+        }
+
+        ul {
+            @include spacing(padding-left, 18px);
+
+            > li {
+                list-style-type: disc !important;
+            }
+        }
+
+        ol {
+            @include spacing(padding-left, 18px);
+
+            > li {
+                list-style-type: decimal !important;
+            }
+        }
+
+        p {
+            @include t2;
+            color: var(--gray-dark);
+        }
+        h1,h2,h3,h4,h5 {color: var(--gray-darker);}
+        h1 {@include h1;}
+        h2 {@include h2;}
+        h3 {@include h3;}
+        h4 {@include h4;}
+        h5 {@include h5;}
+
+        a {
+            color: var(--color1-dark);
+            white-space: wrap;
+            overflow-wrap: break-word;
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    color: var(--color1-main);
+                }
+            }
+
+            &:active {
+                color: var(--color1-darker);
+            }
+        }
+    }
+}

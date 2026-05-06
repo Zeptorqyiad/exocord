@@ -1,0 +1,111 @@
+.card-ellipse {
+    @include spacing(border-radius, 100px);
+
+    @include Tablet {
+        @include spacing(border-radius, 60px);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        @include spacing(gap, 20px);
+        padding: vw(40px);
+        @include spacing(border-radius, 100px);
+
+        @include HD {
+            @include spacing(padding, 24px);
+        }
+
+        @include HD {
+            @include spacing(gap, 24px);
+            @include spacing(border-radius, 60px);
+        }
+
+        &::after,
+        &::before {
+            @include spacing(border-radius, 100px);
+            position: absolute;
+            z-index: -1;
+            @include spacing(width, 405px);
+            @include spacing(height, 170px);
+        }
+    }
+
+    &__icon {
+        @include spacing(padding, 8px);
+        @include spacing(min-width, 32px);
+        @include spacing(min-height, 32px);
+        border-radius: 50%;
+
+        svg {
+            @include spacing(width, 16px);
+            @include spacing(height, 16px);
+            color: white;
+        }
+    }
+
+    &__text {
+        @include t2;
+    }
+
+    /*------------ Color Modifiers ------------*/
+
+    &-color {
+        &_blue {
+            & .card-ellipse__icon {
+                background: var(--color1-main);
+            }
+            & .card-ellipse__text {
+                color: var(--color1-darker);
+            }
+            & .card-ellipse__content,
+            & .card-ellipse__content::before,
+            & .card-ellipse__content::after {
+                background: var(--color1-lighter);
+            }
+        }
+        &_orange {
+            & .card-ellipse__icon {
+                background: var(--color2-main);
+            }
+            & .card-ellipse__text {
+                color: var(--color2-darker);
+            }
+            & .card-ellipse__content,
+            & .card-ellipse__content::before,
+            & .card-ellipse__content::after {
+                background: var(--color2-lighter);
+            }
+        }
+    }
+
+    /*------------ Position Modifiers ------------*/
+
+    &-pos_left &__content::before {
+        content: '';
+        @include spacing(top, -60px);
+        @include spacing(left, -150px);
+
+        @include Tablet {
+            top: vwt(-88px);
+        }
+        @include Mobile {
+            top: vwm(-90px);
+        }
+    }
+    &-pos_right &__content::after {
+        content: '';
+        @include spacing(top, -60px);
+        @include spacing(right, -150px);
+
+        @include Tablet {
+            top: vwt(-88px);
+        }
+        @include Mobile {
+            top: vwm(-90px);
+        }
+    }
+}

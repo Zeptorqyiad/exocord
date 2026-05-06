@@ -1,0 +1,43 @@
+.btn-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: fit-content;
+    background: var(--gray-lighter);
+    color: var(--gray-darker);
+    border-color: var(--color1-main);
+    border-style: solid;
+    touch-action: manipulation;
+    @include transition((border, background, color, opacity));
+    @include border-w(1px);
+    @include gap(8px);
+    @include border-r(100px);
+    @include icon(48px);
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            border: none;
+            background: var(--color1-light);
+
+            & .btn-close__icon {
+                color: var(--gray-white);
+            }
+        }
+    }
+
+    &:active {
+        border: none;
+        background: var(--color1-dark);
+
+        & .btn-close__icon {
+            color: var(--gray-white);
+        }
+    }
+
+    &__icon {
+        color: var(--gray-darker);
+        @include icon(24px);
+    }
+}
+

@@ -1,0 +1,227 @@
+.steps-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: vw(24px);
+    padding: vw(32px);
+    border-style: solid;
+    @include spacing(border-width, 2px);
+    @include spacing(border-radius, 40px);
+
+    @include HD {
+        gap: vwh(32px);
+        padding: vwh(32px);
+    }
+    @include Tablet {
+        gap: vwt(20px);
+        padding: vwt(16px);
+        @include spacing(border-radius, 20px);
+    }
+    @include Mobile {
+        gap: vwm(20px);
+        padding: vwm(16px);
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+        @include Tablet {
+            gap: vwt(12px);
+        }
+        @include Mobile {
+            gap: vwm(12px);
+            width: 100%;
+        }
+
+        &--number {
+            @include h2;
+        }
+        &--title {
+            @include h4;
+            color: var(--gray-black);
+        }
+        &--badge {
+            @include t2;
+            color: var(--gray-darker);
+            padding: vw(6px) vw(12px);
+            @include spacing(border-radius, 100px);
+            @include spacing(border-width, 2px);
+            border-style: solid;
+            width: fit-content;
+
+            @include HD {
+                padding: vwh(6px) vwh(12px);
+            }
+            @include Tablet {
+                padding: vwt(6px) vwt(12px);
+            }
+            @include Mobile {
+                padding: vwm(6px) vwm(12px);
+            }
+        }
+    }
+
+    &__textBlock {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 20px);
+        width: 100%;
+
+        &--descr {
+            @include t2;
+            color: var(--gray-dark);
+        }
+        &--text {
+            @include spacing(border-radius, 20px);
+            @include spacing(padding, 20px);
+            @include t2;
+            color: var(--gray-darker);
+            width: 100%;
+
+            @include Tablet {
+                @include spacing(border-radius, 12px);
+            }
+
+            a {
+                color: var(--color1-darker);
+                text-decoration-line: underline;
+            }
+        }
+        &--title {
+            @include h3;
+            font-weight: 700;
+            @include spacing(margin-bottom, 20px);
+
+            @include Tablet {
+                @include spacing(margin-bottom, 12px);
+            }
+        }
+    }
+
+    &__button {
+        width: 100%;
+        text-align: center;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @include spacing(gap, 20px);
+
+        @include Mobile {
+            flex-direction: column;
+        }
+
+        &--ls {
+            @include spacing(width, 100px);
+            @include spacing(height, 100px);
+            border-radius: 50%;
+
+            @include Mobile {
+                width: vwm(80px);
+                height: vwm(80px);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        &--rs {
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 20px);
+            align-items: flex-start;
+
+            @include Mobile {
+                gap: vwm(12px);
+            }
+        }
+    }
+
+    &__fio {
+        @include h3;
+        color: var(--color1-main);
+
+        span {
+            color: var(--gray-black);
+        }
+    }
+
+    &__diagnos {
+        @include t2;
+        color: var(--gray-black);
+    }
+
+    & .steps-card__button {
+        @include Mobile {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__more {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        min-width: 100%;
+
+        & .btn {
+            width: 100%;
+        }
+
+        @include Mobile {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    /*------------ Border Modifiers ------------*/
+
+    &-border {
+
+        &_blue-light,
+        &_blue-lighter,
+        &_or-light,
+        &_or-lighter {
+            @include spacing(border-width, 2px);
+            border-style: solid;
+        }
+
+        &_blue-light { border-color: var(--gray-light); }
+        &_blue-lighter { border-color: var(--color1-lighter); }
+        &_blue-main { border-color: var(--color1-main); }
+        &_or-light { border-color: var(--color2-light); }
+        &_or-lighter { border-color: var(--color2-lighter); }
+    }
+
+    /*------------ Number Color Modifiers ------------*/
+
+    &-number_blue &__head--number { color: var(--color1-main); }
+    &-number_orange &__head--number { color: var(--color2-light); }
+
+    /*------------ Title Color Modifiers ------------*/
+
+    &-title_dark &__head--title { color: var(--gray-black);  }
+    &-title_blue &__head--title { color: var(--color1-main); }
+
+    /*------------ Badge Border Modifiers ------------*/
+
+    &__head--badge.blue { border-color: var(--color1-light); }
+    &__head--badge.orange { border-color: var(--color2-light); }
+
+    /*------------ Background Text Modifiers ------------*/
+
+    &__textBlock--text.blue { background: var(--color1-lighter); }
+    &__textBlock--text.orange { background: var(--color2-lighter); }
+}

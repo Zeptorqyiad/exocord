@@ -1,0 +1,61 @@
+.separator {
+    flex-shrink: 0;
+
+    /*----------ORIENTATION-----------*/
+    &-orientation_horizontal {
+        width: 100%;
+
+        &.separator-size_large {
+            height: max(#{vw(2px), 2px});
+
+            @include HD {
+                height: max(#{vwh(2px), 2px});
+            }
+            @include Tablet {
+                height: max(#{vwt(2px), 2px});
+            }
+            @include Mobile {
+                height: max(#{vwm(2px), 2px});
+            }
+        }
+
+        &.separator-size_small {
+            height: max(#{vw(1px), 1px});
+
+            @include HD {
+                height: max(#{vwh(1px), 1px});
+            }
+            @include Tablet {
+                height: max(#{vwt(1px), 1px});
+            }
+            @include Mobile {
+                height: max(#{vwm(1px), 1px});
+            }
+        }
+    }
+
+    &-orientation_vertical {
+        align-self: stretch;
+        height: 100%;
+        width: max(#{vw(2px), 2px});
+
+        @include HD {
+            width: max(#{vwh(2px), 2px});
+        }
+        @include Tablet {
+            width: max(#{vwt(2px), 2px});
+        }
+        @include Mobile {
+            width: max(#{vwm(2px), 2px});
+        }
+    }
+
+    /*----------THEME-----------*/
+    &-theme_light {
+        background: var(--gray-light);
+    }
+
+    &-theme_dark {
+        background: var(--gray-dark);
+    }
+}

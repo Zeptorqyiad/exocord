@@ -1,0 +1,8 @@
+.link {
+    @include t2;
+    @include transition((border, background, color, opacity));
+    white-space: nowrap;
+    color: var(--color1-main);
+    text-decoration-line: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,38 @@
+.btn-like {
+    /*----------CORE STYLE-----------*/
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: fit-content;
+    color: var(--gray-medium);
+    @include gap(8px);
+    @include transition((color));
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            color: var(--color1-main);
+        }
+    }
+
+    &:active {
+        color: var(--color1-darker);
+    }
+
+    &.active {
+        color: var(--color1-dark);
+    }
+
+    &__value {
+        @include t2;
+        //@include transition((color));
+    }
+
+    &__icon {
+        display: inline-block;
+        flex-shrink: 0;
+        vertical-align: middle;
+        @include icon(24px);
+        @include transition((fill, stroke));
+    }
+}

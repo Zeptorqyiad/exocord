@@ -1,0 +1,92 @@
+.card-text {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background: var(--gray-white);
+    border-radius: vw(40px);
+    padding: vw(40px);
+    gap: vw(20px);
+    position: relative;
+    z-index: auto;
+
+    @include HD {
+        padding: vwh(32px);
+        gap: vwh(20px);
+    }
+    @include Tablet {
+        padding: vwt(16px);
+        gap: vwt(12px);
+        border-radius: vwt(20px);
+    }
+    @include Mobile {
+        padding: vwm(16px);
+        border-radius: vwm(20px);
+        gap: vwm(12px);
+    }
+
+    &__title {
+        @include h4;
+        color: var(--gray-black);
+    }
+
+    &__text {
+        @include t2;
+        color: var(--gray-dark);
+    }
+
+    &__marker {
+        position: absolute;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        @include spacing(border-radius, 100px);
+        @include spacing(right, 20px);
+        @include spacing(bottom, -34px);
+        @include spacing(padding, 8px);
+        @include spacing(height, 48px);
+        @include spacing(width, 32px);
+
+        @include Mobile {
+            @include spacing(right, 10px);
+            @include spacing(bottom, -28px);
+        }
+
+        svg {
+            @include spacing(width, 16px);
+            @include spacing(height, 16px);
+            @include spacing(stroke-width, 2px);
+            color: var(--gray-white);
+        }
+    }
+
+    /*------------ Border Modifiers ------------*/
+    &-border {
+        &_outline {
+            border: none;
+        }
+
+        &_blue,
+        &_lighter,
+        &_light,
+        &_main {
+            border-width: vw(2px);
+            border-style: solid;
+        }
+
+        &_blue { border-color: var(--color1-lighter); }
+        &_lighter { border-color: var(--color2-lighter); }
+        &_light { border-color: var(--color2-light); }
+        &_main { border-color: var(--color2-main); }
+    }
+
+    /*------------ Color Modifiers ------------*/
+    &-color {
+        &_dark .card-text__text--accent { color: var(--gray-dark); }
+        &_blue .card-text__text--accent { color: var(--color1-dark); }
+        &_orange .card-text__text--accent { color: var(--color2-dark); }
+    }
+
+    /*------------ Marker Color Modifiers ------------*/
+    &__marker.blue { background: var(--color1-light); }
+    &__marker.orange { background: var(--color2-light); }
+}

@@ -1,0 +1,87 @@
+.callback-modal {
+    width: 100%;
+    max-width: vw(560px);
+    padding: vw(40px);
+    height: auto;
+    max-height: 100dvh;
+    @include border-r(28px, 28px, 0, 0);
+    @include hide-scrollbar;
+
+    @include HD {
+        max-width: vwh(500px);
+        padding: vwh(40px);
+    }
+    @include Tablet {
+        max-width:  vwt(500px);
+        padding: vwt(20px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        @include spacing(border-radius, 20px);
+    }
+    @include Mobile {
+        padding: vwm(8px) vwm(12px) vwm(12px);
+        left: 0;
+        top: 0;
+        transform: none;
+        border-radius: 0;
+        max-width: unset;
+        width: 100vw;
+        height: 100dvh;
+    }
+
+    &__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        @include gap(20px);
+    }
+
+    &__button-close {
+        position: absolute;
+        top: vw(-40px);
+        right: vw(-100px);
+
+        @include HD {
+            top: vwh(-40px);
+            right: vwh(-100px);
+        }
+        @include Tablet {
+            top: vwt(-20px);
+            right: vwt(-80px);
+        }
+        @include Mobile {
+            top: 0;
+            right: 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 20px);
+
+        @include Mobile {
+            border-top: solid var(--gray-light);
+            @include spacing(border-width, 1px);
+            position: relative;
+            @include spacing(padding-top, 40px);
+            top: vwm(60px);
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 12px);
+
+        svg {
+            color: var(--color1-main);
+        }
+
+        a {
+            width: 100%;
+        }
+    }
+}

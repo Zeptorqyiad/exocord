@@ -1,0 +1,127 @@
+.form-block {
+    padding: vw(80px) 0;
+
+    @include HD {
+        padding: vwh(60px) 0;
+    }
+    @include Tablet {
+        padding: vwt(40px) 0;
+    }
+    @include Mobile {
+        padding: vwm(40px) 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        gap: vw(60px);
+
+        @include HD {
+            gap: vwh(40px);
+        }
+        @include Tablet {
+            gap: vwt(24px);
+            flex-direction: column-reverse;
+        }
+        @include Mobile {
+            gap: vwm(24px);
+        }
+
+        &--ls {
+            width: vw(952px);
+            height: vw(639px);
+            @include spacing(border-radius, 40px);
+
+            @include HD {
+                width: vwh(600px);
+                height: vwh(628px);
+            }
+            @include Tablet {
+                width: 100%;
+                height: vwt(790px);
+                @include spacing(border-radius, 20px);
+            }
+            @include Mobile {
+                height: vwt(420px);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                @include spacing(border-radius, 40px);
+
+                @include Tablet {
+                    @include spacing(border-radius, 20px);
+                }
+            }
+        }
+        &--rs {
+            display: flex;
+            flex-direction: column;
+            gap: vw(40px);
+            width: vw(688px);
+
+            @include HD {
+                width: vwh(636px);
+                gap: vwh(40px);
+            }
+            @include Tablet {
+                width: 100%;
+                gap: vwt(24px);
+            }
+            @include Mobile {
+                gap: vwm(24px);
+            }
+        }
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @include spacing(gap, 12px);
+        user-select: none;
+    }
+
+    &__form {
+        background: var(--color1-main);
+        padding: vw(40px);
+        @include spacing(gap, 20px);
+        @include spacing(border-radius, 40px);
+        display: flex;
+        flex-direction: column;
+
+        @include HD {
+            padding: vwh(32px);
+        }
+        @include Tablet {
+            @include spacing(padding, 16px);
+            @include spacing(border-radius, 20px);
+        }
+
+        &--links {
+            display: flex;
+            flex-direction: column;
+            gap: vw(12px);
+
+            @include HD {
+                gap: vwh(12px);
+            }
+            @include Tablet {
+                gap: vwt(12px);
+            }
+            @include Mobile {
+                gap: vwm(12px);
+            }
+
+            svg {
+                color: var(--color1-main);
+            }
+
+            a {
+                width: 100%;
+            }
+        }
+    }
+}

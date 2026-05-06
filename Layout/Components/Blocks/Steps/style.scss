@@ -1,0 +1,140 @@
+.steps {
+    padding: vw(110px) 0;
+    background: var(--gray-white);
+
+    @include HD {
+        padding: vwh(90px) 0;
+    }
+    @include Tablet {
+        padding: vwt(60px) 0;
+    }
+    @include Mobile {
+        padding: vwm(60px) 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: vw(60px);
+
+        @include HD {
+            gap: vwh(40px);
+        }
+        @include Tablet {
+            gap: vwt(24px);
+        }
+        @include Mobile {
+            gap: vwm(24px);
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: vw(20px);
+
+        @include HD {
+            gap: vwh(20px);
+        }
+        @include Tablet {
+            display: flex;
+            flex-direction: column;
+            gap: vwt(32px);
+        }
+        @include Mobile {
+            gap: vwm(20px);
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 20px);
+
+        @include Tablet {
+            flex-direction: row-reverse;
+        }
+        @include Mobile {
+            flex-direction: column-reverse;
+        }
+
+        & .steps-card {
+            @include Tablet {
+                width: 50%;
+            }
+            @include Mobile {
+                width: 100%;
+            }
+
+
+        }
+
+        & .picture-custom {
+            width: 100%;
+            @include spacing(height, 280px);
+
+            @include Tablet {
+                width: 50%;
+            }
+            @include Mobile {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(1) {
+            justify-content: flex-start;
+        }
+        &:nth-child(2) {
+            margin-top: vw(100px);
+            justify-content: flex-end;
+
+            @include HD {
+                margin-top: vwh(114px);
+            }
+            @include Tablet {
+                margin-top: 0;
+            }
+            @include Mobile {
+
+            }
+        }
+        &:nth-child(3) {
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+
+            @include Tablet {
+                flex-direction: row;
+            }
+            @include Mobile {
+                flex-direction: column-reverse;
+            }
+        }
+
+        & .steps-card__more {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        & .steps-card__button {
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    }
+}
+
+.interaction__item {
+    & .steps-card__more {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
+    & .btn {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+

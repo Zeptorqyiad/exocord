@@ -1,0 +1,193 @@
+.diagnoses {
+    padding: vw(80px) 0;
+
+    @include HD {
+        padding: vwh(60px) 0;
+    }
+    @include Tablet {
+        padding: vwt(40px) 0;
+    }
+    @include Mobile {
+        padding: vwm(40px) 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: vw(60px);
+
+        @include HD {
+            gap: vwh(40px);
+        }
+        @include Tablet {
+            gap: vwt(24px);
+        }
+        @include Mobile {
+            gap: vwm(24px);
+        }
+    }
+
+    &__title {
+        width: vw(688px);
+
+        @include HD {
+            width: vwh(628px);
+        }
+        @include Tablet {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: vw(32px);
+
+        @include HD {
+            gap: vwh(24px);
+        }
+        @include Tablet {
+            gap: vwt(24px);
+        }
+        @include Mobile {
+            gap: vwm(24px);
+        }
+
+        &-top {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            @include spacing(gap, 20px);
+
+            @include Tablet {
+                flex-direction: column;
+            }
+
+            &--ls {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                @include spacing(gap, 20px);
+                flex-basis: 50%;
+
+                @include Tablet {
+                    flex-basis: 100%;
+                }
+                @include Mobile {
+                    flex-direction: column;
+                }
+            }
+
+            &--rs {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                @include spacing(gap, 20px);
+                flex-basis: 50%;
+
+                @include Tablet {
+                    flex-basis: 100%;
+                    flex-direction: row-reverse;
+                }
+                @include Mobile {
+                    flex-direction: column;
+                }
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            flex-direction: row;
+            @include spacing(gap, 20px);
+
+
+            @include Mobile {
+                flex-direction: column;
+            }
+
+            &--ls,
+            &--rs {
+                width: 50%;
+
+                @include Mobile {
+                    width: 100%;
+                }
+
+                & .card-text{
+                    p {
+                        @include t4;
+                    }
+
+                    a {
+                        @include t4;
+                        color: var(--color1-main);
+                        white-space: wrap;
+                    }
+
+                    @include Mobile {
+                        width: 92vw;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &__tabs {
+        position: relative;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 20px);
+        width: vw(405px);
+
+        @include HD {
+            width: vwh(304px);
+        }
+        @include Tablet {
+            width: 50%;
+        }
+        @include Mobile {
+            width: 100%;
+        }
+    }
+
+    &__preview {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 20px);
+        width: vw(405px);
+        
+        & .card-ellipse {
+            & .card-ellipse__content::before {
+                @include Tablet {
+                    top: vwt(-88px);
+                }
+                @include Mobile {
+                    top: vwm(-90px);
+                }
+            }
+        }
+
+        @include HD {
+            width: vwh(304px);
+        }
+        @include Tablet {
+            width: 50%;
+        }
+        @include Mobile {
+            width: 100%;
+        }
+
+        &-image {
+            width: 100%;
+            @include spacing(height, 244px);
+            z-index: 99;
+        }
+
+        &--text {
+            @include t2;
+            color: var(--gray-medium);
+        }
+    }
+}

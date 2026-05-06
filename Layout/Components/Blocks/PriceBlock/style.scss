@@ -1,0 +1,277 @@
+.price-block {
+    padding: vw(110px) 0;
+
+    @include HD {
+        padding: vwh(90px) 0;
+    }
+    @include Tablet {
+        padding: vwt(60px) 0;
+    }
+    @include Mobile {
+        padding: vwm(60px) 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        gap: vw(40px);
+
+        @include HD {
+            gap: vwh(40px);
+        }
+        @include Tablet {
+            flex-direction: column;
+            gap: vwt(24px);
+        }
+        @include Mobile {
+            gap: vwm(24px);
+        }
+
+        &--ls {
+            flex-basis: vw(952px);
+
+            @include HD {
+                flex-basis: vwh(676px);
+            }
+            @include Tablet {
+                flex-basis: 100%;
+            }
+        }
+        &--rs {
+            width: vw(688px);
+
+            @include HD {
+                width: vwh(560px);
+            }
+            @include Tablet {
+                width: 100%;
+            }
+        }
+    }
+
+    &-head__title {
+        text-transform: inherit;
+        @include spacing(margin-bottom, 20px);
+    }
+
+    &-head__text {
+        @include t2;
+        color: var(--gray-dark);
+        @include spacing(margin-bottom, 40px);
+
+        @include HD {
+            @include spacing(margin-bottom, 20px);
+        }
+    }
+
+    &__calculation {
+        background: var(--gray-white);
+        display: flex;
+        flex-direction: column;
+        padding: vw(40px);
+        @include spacing(gap, 20px);
+        border-radius: vw(40px);
+
+        @include HD {
+            padding: vwh(40px);
+            border-radius: vwh(40px);
+        }
+        @include Tablet {
+            @include spacing(padding, 16px);
+            @include spacing(border-radius, 20px);
+        }
+    }
+
+    &__head {
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 12px);
+        align-items: center;
+
+        @include Mobile {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &--title {
+            @include h3;
+            color: var(--gray-black);
+        }
+    }
+
+    &__badges {
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 12px);
+    }
+
+    &__text {
+        @include spacing(padding, 20px);
+        @include spacing(border-radius, 20px);
+        @include spacing(border-width, 2px);
+        border: solid var(--gray-lighter);
+        @include t3;
+        color: var(--gray-dark);
+        width: 100%;
+    }
+
+    &__size {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @include spacing(gap, 12px);
+
+        &--title {
+            @include h4;
+            color: var(--gray-black);
+        }
+        &--tabs {
+            display: flex;
+            flex-direction: row;
+            @include spacing(gap, 12px);
+
+            & .tab {
+                width: vw(62px);
+
+                @include HD {
+                    width: vwh(62px);
+                }
+                @include Tablet {
+                    width: vwt(45px);
+                }
+                @include Mobile {
+                    width: vwm(45px);
+                }
+            }
+        }
+        &--popup {
+            @include t2;
+            color: var(--color1-dark);
+            text-decoration: underline;
+        }
+    }
+
+    &__support {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 12px);
+        align-items: flex-start;
+
+        &--title {
+            @include h4;
+            color: var(--gray-black);
+        }
+
+        &--badges {
+            display: flex;
+            flex-direction: row;
+            @include spacing(gap, 12px);
+            @include spacing(padding-top, 12px);
+
+            @include Mobile {
+                flex-direction: column;
+                width: 100%;
+
+                & .btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @include spacing(gap, 8px);
+    }
+
+    &__price {
+        background: var(--color1-lighter);
+        gap: vw(20px);
+        @include spacing(border-radius, 20px);
+        padding: vw(20px) vw(40px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        @include HD {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: vwh(20px);
+            padding: vwh(20px) vwh(40px);
+        }
+        @include Tablet {
+            flex-direction: row;
+            gap: vwt(20px);
+            padding: vwt(20px);
+        }
+        @include Mobile {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &--value {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            @include spacing(gap, 20px);
+        }
+
+        &--final {
+            @include h2;
+            font-weight: 800;
+            color: var(--gray-black);
+            white-space: nowrap;
+        }
+        &--through {
+            @include h4;
+            color: var(--color1-light);
+            text-decoration-line: line-through;
+            white-space: nowrap;
+        }
+        &--descr {
+            @include t4;
+            color: var(--gray-medium);
+        }
+    }
+
+    &__definition {
+        @include t4;
+        color: var(--gray-medium);
+    }
+    
+    &__consultation {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 20px);
+        padding: vw(40px);
+        border-radius: vw(40px);
+        @include spacing(margin-top, 20px);
+        width: 100%;
+        border-style: solid;
+        @include spacing(border-width, 2px);
+        border-color: var(--color1-main);
+        background: var(--gray-white);
+
+        @include HD {
+            padding: vwh(40px);
+            border-radius: vwh(40px);
+        }
+        @include Tablet {
+            @include spacing(padding, 16px);
+            @include spacing(border-radius, 20px);
+        }
+
+        &--title {
+            @include h4;
+            color: var(--gray-black);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+}

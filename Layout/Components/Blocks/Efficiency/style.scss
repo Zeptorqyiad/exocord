@@ -1,0 +1,137 @@
+.efficiency {
+    padding: vw(80px) 0;
+    overflow: hidden;
+
+    @include HD {
+        padding: vwh(60px) 0;
+    }
+    @include Tablet {
+        padding: vwt(40px) 0;
+    }
+    @include Mobile {
+        padding: vwm(40px) 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: vw(60px);
+
+        @include HD {
+            gap: vwh(40px);
+        }
+        @include Tablet {
+            gap: vwh(24px);
+        }
+        @include Mobile {
+            gap: vwm(24px);
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: vw(688px) vw(547px) vw(405px);
+        gap: vw(20px);
+
+        @include HD {
+            grid-template-columns: vwh(520px) vwh(412px) vwh(304px);
+            gap: vwh(20px);
+        }
+        @include Tablet {
+            display: flex;
+            flex-direction: column;
+            gap: vwt(20px);
+        }
+        @include Mobile {
+            gap: vwm(20px);
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 20px);
+
+        & .card-text {
+            max-width: vw(546px);
+
+            @include HD {
+                max-width: none;
+                width: 100%;
+            }
+        }
+
+        & .picture-custom {
+            width: 100%;
+        }
+
+        &:first-child {
+            align-items: flex-end;
+
+            & .card-ellipse {
+                z-index: 12;
+            }
+
+            & .picture-custom {
+                height: vw(540px);
+                z-index: 20;
+
+                @include HD {
+                    height: vwh(540px);
+                }
+                @include Tablet  {
+                    height: vwt(400px);
+                }
+                @include Mobile {
+                    height: vwm(300px);
+                }
+            }
+
+            & .card-text {
+                z-index: 20;
+            }
+        }
+
+        &:nth-child(2) {
+            margin-top: vw(40px);
+
+            @include HD {
+                margin-top: vwh(82px);
+            }
+            @include Tablet {
+                margin-top: 0;
+            }
+
+            & .picture-custom {
+                height: vw(640px);
+                z-index: 20;
+
+                @include HD {
+                    height: vwh(640px);
+                }
+                @include Tablet {
+                    height: vwt(500px);
+                }
+                @include Mobile {
+                    height: vwm(400px);
+                }
+            }
+
+            & .card-text {
+                z-index: 20;
+            }
+        }
+
+        &:nth-child(3) {
+            justify-content: center;
+            flex-direction: column-reverse;
+
+            & .card-text {
+                z-index: 20;
+            }
+            & .card-ellipse {
+                z-index: 10;
+            }
+        }
+    }
+}

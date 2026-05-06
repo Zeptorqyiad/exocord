@@ -1,0 +1,127 @@
+.production-slider {
+
+    &__buttons {
+        display: flex;
+        gap: vw(12px);
+        justify-self: end;
+        align-items: center;
+
+        & .btn {
+            @include spacing(width, 48px);
+        }
+
+        @include HD {
+            gap: vwh(12px);
+        }
+        @include Tablet {
+            width: 100%;
+            justify-self: start;
+            gap: 0;
+        }
+    }
+    &__slider-wrap {
+        overflow: hidden;
+        height: fit-content;
+        margin-left: vw(120px);
+
+        @include HD {
+            margin-left: vwh(45px);
+        }
+        @include Tablet {
+            margin-left: vwt(16px);
+        }
+        @include Mobile {
+            margin-left: vwm(16px);
+        }
+
+        & .card-ellipse {
+            z-index: 10;
+        }
+
+        & .picture-custom {
+            position: relative;
+            z-index: 20;
+        }
+
+        & .product-fs__main-image {
+            position: relative;
+            z-index: 20;
+        }
+
+        & .swiper-slide {
+            max-width: vw(830px);
+
+            @include HD {
+                max-width: vwh(628px);
+            }
+            @include Tablet {
+                max-width: vwt(678px);
+            }
+            @include Mobile {
+                max-width: vwm(322px);
+            }
+
+            video {
+                width: 100%;
+                height: 100%;
+                @include spacing(border-radius, 40px);
+
+                @include Tablet {
+                    @include spacing(border-radius, 20px);
+                }
+            }
+        }
+    }
+    &__slider {
+        overflow: hidden;
+    }
+
+    &__button-prev,
+    &__button-next {
+        @include Tablet {
+            display: none;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        @include spacing(gap, 20px);
+
+        & .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            @include spacing(gap, 20px);
+            width: vw(830px);
+
+            @include HD {
+                width: vwh(628px);
+            }
+            @include Tablet {
+                width: vwt(678px);
+            }
+            @include Mobile {
+                width: vwm(322px);
+            }
+
+            & .picture-custom {
+                width: 100%;
+                @include spacing(height, 466px);
+
+                @include Mobile {
+                    height: vwm(300px);
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            & .card-text {
+                width: 100%;
+            }
+        }
+    }
+}

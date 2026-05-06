@@ -1,0 +1,259 @@
+.header {
+    &__container {
+        position: fixed;
+        min-width: 100vw;
+        top: 0;
+        left: 0;
+        z-index: 900;
+        background: var(--gray-lighter);
+        padding: 0 vw(120px);
+        max-width: vw(1680px);
+        transition: background 0.1s;
+        will-change: background;
+
+        @include HD {
+            padding: 0 vwh(45px);
+            max-width: vwh(1276px);
+        }
+        @include Tablet {
+            padding: 0 vwt(16px);
+            max-width: vwt(736px);
+        }
+        @include Mobile {
+            padding: 0 vwm(16px);
+            max-width: none;
+            //width: 100%;
+        }
+
+        @include Tablet {
+            gap: 0;
+            justify-content: space-between;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        @include spacing(gap, 24px);
+        @include spacing(padding-top, 12px);
+        @include spacing(padding-bottom, 12px);
+
+        @include Tablet {
+            justify-content: space-between;
+        }
+
+        &.scroll {
+            & .header__content--logo svg {
+
+                path:first-child {
+                    fill: var(--gray-white);
+                }
+                path {
+                    fill: var(--gray-black);
+                }
+            }
+
+            & .header__nav--link {
+                &:active {
+                    background: var(--color1-darker);
+                }
+
+                span {
+                    color: var(--gray-white);
+
+                    @media (hover: hover) and (pointer: fine) {
+                        &:hover {
+                            color: var(--color1-light);
+                        }
+                    }
+
+                    &:active {
+                        color: var(--color1-lighter);
+                    }
+                }
+            }
+
+            & .social__link,
+            & .btn {
+                background: var(--color1-lighter);
+
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        color: var(--color1-main);
+                    }
+                }
+
+                &:active {
+                    background: var(--color1-light);
+                    color: var(--color1-darker);
+                }
+            }
+
+            & .header__contacts--button {
+                background: var(--gray-white);
+                color: var(--gray-black);
+
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        color: var(--gray-darker);
+                        background: var(--color1-light);
+                    }
+                }
+
+                &:active {
+                    color: var(--gray-white);
+                    background: var(--color1-darker);
+                }
+            }
+
+            & .header__contacts--mob {
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        color: var(--color1-main);
+                    }
+                }
+
+                &:active {
+                    color: var(--color1-darker);
+                    background: var(--color1-light);
+                }
+            }
+
+            & .header__burger button {
+                border-color: var(--gray-white);
+                color: var(--gray-white);
+                background: transparent;
+
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        color: var(--color1-dark);
+                        background: var(--gray-white);
+                    }
+                }
+
+                &:active {
+                    border-color: var(--color1-lighter);
+                    color: var(--color1-darker);
+                    background: var(--color1-lighter);
+                }
+            }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex: 1;
+        gap: vw(12px);
+        align-items: center;
+
+        @include HD {
+            gap: 0;
+        }
+        @include Tablet {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &--link {
+            padding: vw(8px) vw(12px);
+            @include spacing(border-radius, 100px);
+            white-space: nowrap;
+            transition: background 0.3s, color 0.3s;
+            will-change: background, color;
+
+            &:active {
+                background: var(--gray-medium);
+
+                span {
+                    color: var(--gray-white);
+                }
+            }
+
+            @include HD {
+                padding: vwh(8px) vwh(12px);
+            }
+            @include Tablet {
+                padding: vwt(8px) vwt(12px);
+            }
+            @include Mobile {
+                padding: vwm(8px) vwm(12px);
+            }
+
+            span {
+                @include t2;
+                font-weight: 700;
+                color: var(--gray-darker);
+                padding: vw(2px) vw(4px);
+                transition: color 0.3s;
+                will-change: color;
+
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        color: var(--color1-main);
+                    }
+                }
+
+                &:active {
+                    color: var(--gray-white);
+                }
+
+                @include HD {
+                    padding: vwh(2px) vwh(4px);
+                }
+                @include Tablet {
+                    padding: vwt(2px) vwt(4px);
+                }
+                @include Mobile {
+                    padding: vwm(2px) vwm(4px);
+                }
+            }
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        align-items: center;
+        @include spacing(gap, 12px);
+
+
+        @include Mobile {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &--phone,
+        &--email {
+            @include t2;
+
+            @include HD {
+                display: none !important;
+            }
+        }
+
+        &--mob {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+
+            @include HD {
+                display: flex !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+        }
+    }
+
+    &__burger {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+
+        @include Tablet {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

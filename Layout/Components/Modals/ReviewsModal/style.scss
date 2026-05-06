@@ -1,0 +1,133 @@
+.reviews-modal {
+    width: 100%;
+    height: 100dvh;
+    @include border-r(28px, 28px, 0, 0);
+    @include hide-scrollbar;
+
+    @include Mobile {
+        padding: vwm(8px) vwm(12px) vwm(12px);
+        left: 0;
+        top: 0;
+        transform: none;
+        border-radius: 0;
+        max-width: unset;
+        width: 100vw;
+        height: 100dvh;
+    }
+
+    &__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        @include gap(20px);
+    }
+
+    &__button-close {
+        position: absolute;
+        top: vw(-40px);
+        right: vw(-100px);
+
+        @include HD {
+            top: vwh(-40px);
+            right: vwh(-100px);
+        }
+        @include Tablet {
+            top: vwt(-20px);
+            right: vwt(-80px);
+        }
+        @include Mobile {
+            top: 0;
+            right: 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin: vwm(20px);
+        background: var(--gray-white);
+        border-radius: vwm(20px);
+        border: solid vwm(1px);
+        border-color: var(--color2-light);
+        padding: vwm(16px);
+        overflow-y: scroll;
+
+        @include Mobile {
+            top: vwm(60px);
+            @include spacing(border-width, 1px);
+            position: relative;
+            @include spacing(padding-top, 20px);
+        }
+
+        & .steps-card .steps-card__more {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__image {
+        width: vwm(80px);
+        height: vwm(80px);
+        margin: 0 auto;
+
+        img {
+            width: vwm(80px);
+            height: vwm(80px);
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: vwm(10px);
+        margin-top: vwm(20px);
+    }
+
+    &__fio {
+        color: var(--color1-main);
+        @include h3;
+    }
+
+    &__years {
+        color: var(--gray-black);
+        @include h3;
+    }
+
+    &__diagnos {
+        margin-top: vwm(10px);
+        @include t2;
+        color: var(--gray-black);
+    }
+
+    &__text {
+        margin: vwm(20px) 0;
+        @include t2;
+        color: var(--gray-dark);
+        font-size: 16px !important;
+    }
+
+    &__block {
+        background: var(--color1-lighter);
+        @include spacing(border-radius, 12px);
+        @include spacing(padding, 20px);
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 12px);
+    }
+
+    &__title {
+        @include h4;
+        color: var(--gray-black);
+        font-size: 20px !important;
+    }
+
+    &__que {
+        @include t2;
+        color: var(--gray-dark);
+        font-size: 16px !important;
+    }
+}

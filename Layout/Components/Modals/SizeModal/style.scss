@@ -1,0 +1,186 @@
+.size-modal {
+    width: 100%;
+    max-width: vw(688px);
+    padding: vw(40px);
+    height: auto;
+    max-height: 100dvh;
+    @include border-r(28px, 28px, 0, 0);
+    @include hide-scrollbar;
+    background: var(--gray-white) !important;
+
+    @include HD {
+        max-width: vwh(688px);
+        padding: vwh(40px);
+    }
+    @include Tablet {
+        max-width:  vwt(500px);
+        padding: vwt(20px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        @include spacing(border-radius, 20px);
+    }
+    @include Mobile {
+        padding: vwm(8px) vwm(12px) vwm(12px);
+        left: 0;
+        top: 0;
+        transform: none;
+        border-radius: 0;
+        max-width: unset;
+        width: 100vw;
+        height: 100dvh;
+    }
+
+    &__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        @include gap(20px);
+
+        @include Mobile {
+            height: 100dvh;
+            overflow-y: scroll;
+        }
+    }
+
+    &__button-close {
+        position: absolute;
+        top: vw(0px);
+        right: vw(-60px);
+
+        @include HD {
+            top: 0;
+            right: vwh(-60px);
+        }
+        @include Tablet {
+            top: 0;
+            right: vwt(-80px);
+        }
+        @include Mobile {
+            top: vwm(12px);
+            right: vwm(12px);
+            z-index: 999;
+        }
+    }
+
+    &__content {
+        max-height: calc(100dvh - 80px);
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 20px);
+
+        @include Mobile {
+            border-top: solid var(--gray-light);
+            @include spacing(border-width, 1px);
+            @include spacing(padding-top, 40px);
+            position: relative;
+            top: vwm(60px);
+        }
+
+        & .btn {
+            min-width: 100%;
+            @include spacing(min-height, 48px);
+            @include spacing(max-height, 48px);
+        }
+    }
+
+    &__title {
+        @include h3;
+        font-weight: 700;
+        color: var(--gray-black);
+    }
+    &__table {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 12px);
+        @include spacing(padding-bottom, 20px);
+
+        &--head {
+            @include t1;
+            font-weight: 700;
+            color: var(--gray-black);
+        }
+
+        &--table {
+            @include spacing(border-radius, 8px);
+            @include spacing(border-width, 1px);
+            border: solid var(--main-gray-lighter, #EFEFEF);
+
+            @include Mobile {
+                overflow: scroll;
+            }
+        }
+
+        table {
+            width: 100%;
+            display: block;
+        }
+        tr:nth-child(1) {
+            background-color: #EFEFEF;
+
+            th {
+                @include t3;
+                color: var(--gray-darker);
+                text-align: left;
+            }
+        }
+        th, td {
+            @include spacing(border-width, 1px);
+            border-style: solid;
+            border-color: #ddd;
+            padding: 8px;
+        }
+
+        &--descr {
+            @include t4;
+            color: var(--gray-medium);
+        }
+    }
+
+    &__recommend {
+        display: flex;
+        flex-direction: column;
+        @include spacing(gap, 12px);
+
+        &--title {
+            @include t1;
+            color: var(--gray-black);
+        }
+
+        &--text {
+            @include t3;
+            color: var(--gray-dark);
+
+            ol {
+                @include spacing(padding-left, 14px);
+                list-style-type: decimal !important;
+                li {
+                    list-style-type: decimal !important;
+                    color: var(--gray-dark);
+                    @include t3;
+
+                    &:not(:last-child) {
+                        @include spacing(margin-bottom, 12px);
+                    }
+                }
+            }
+
+            ul {
+                @include spacing(padding-left, 17px);
+                list-style-type: disc !important;
+
+                > li {
+                    list-style-type: disc !important;
+                    color: var(--gray-dark);
+                    @include t3;
+
+                    &:not(:last-child) {
+                        @include spacing(margin-bottom, 12px);
+                    }
+                }
+            }
+        }
+    }
+}

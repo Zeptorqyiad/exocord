@@ -1,0 +1,30 @@
+.picture-custom {
+    overflow: hidden;
+    @include spacing(border-radius, 40px);
+
+    @include Tablet {
+        @include spacing(border-radius, 20px);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    /*------------ Border Modifiers ------------*/
+
+    &-border {
+        &_outline {
+            border: none;
+        }
+
+        &_blue,
+        &_orange {
+            border-width: vw(2px);
+            border-style: solid;
+        }
+
+        &_blue { border-color: var(--color1-light); }
+        &_orange { border-color: var(--color2-light); }
+    }
+}
